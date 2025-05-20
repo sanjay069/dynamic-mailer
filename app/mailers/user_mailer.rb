@@ -1,8 +1,8 @@
 class UserMailer < ApplicationMailer
   def custom_email(template, user)
-    @subject = template.subject
+    @language = template.language 
     @title = template.title
     @body = template.body
-    mail(to: user.email, subject: @subject)
+    mail(to: user.email, language: @language)
   end
 end

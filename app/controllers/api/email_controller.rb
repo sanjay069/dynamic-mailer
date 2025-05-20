@@ -32,7 +32,7 @@ class Api::EmailController < ApplicationController
     authorize! :read, Template
 
     begin
-      template = Template.find_by(subject: params[:subject], title: params[:title])
+      template = Template.find_by(language: params[:language], title: params[:title])
       if template.nil?
         return render json: { error: "Template not found" }, status: :not_found
       end
