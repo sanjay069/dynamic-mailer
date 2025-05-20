@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # Roles: "Admin", "Consumer"
+  belongs_to :language, optional: true
 def admin?
   role == "Admin"
 end
